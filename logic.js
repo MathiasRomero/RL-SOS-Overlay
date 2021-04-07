@@ -276,6 +276,7 @@
               $('#blue-player-3-saves').text(blue3.saves)
               $('#blue-player-3-assists').text(blue3.assists)
               $('#blue-player-3-boost').text(blue3.boost)
+              $('#blue-player-3-boost-amount').text(blue3.boost)
               $('#blue-player-3-p-bar').width(blue3.boost + "%")
               
               $('#blue-player-2').removeClass('d-none')

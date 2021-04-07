@@ -5,7 +5,7 @@ Please follow me on YouTube and Twitch
 
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
 
@@ -76,6 +76,7 @@ Please follow me on YouTube and Twitch
                       </tr>
                     </tbody>
 
+
                   </table>
                 </div>
                 <div class="col-2 p-0">
@@ -99,18 +100,25 @@ Please follow me on YouTube and Twitch
 
 
             <!-- blue player 3 -->
-            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-3">
+            <div class="player-box blue border border-dark text-dark bg-blue-team rounded mt-3 d-none" id="blue-player-3">
               <!-- players name -->
-              <h4 class="text-center" id="blue-player-3-name">name</h4>
+
+                <!-- Boost amount Container
+                <div class="boost-container">
+                  <span class="boost-amount" id="blue-player-3-boost-amount"</span>
+                </div>
+-->
+              <h4 class="player-name-blue" id="blue-player-3-name">name</h4>
               <!-- boost bar -->
-              <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
+              <div class="progress border border-dark rounded-0" style="height: 30px; width: auto; bottom: 0px;">
                 <div class="progress-bar progress-done-b" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-3-p-bar">
                   <span class="text-light" id="blue-player-3-boost">20%</span>
                 </div>
               </div>
+
               <!-- stat counters -->
-              <div class="container p-1">
-                <div class="row">
+              <div class="container p-1 hidden">
+                <div class="row hidden">
                   <div class="col-sm-1"></div>
                   <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
                   <div class="col-sm-1 h5" id="blue-player-3-goals">1</div>
@@ -128,9 +136,9 @@ Please follow me on YouTube and Twitch
 
 
             <!-- blue player 2 -->
-            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-2">
+            <div class="player-box blue border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-2">
               <!-- players name -->
-              <h4 class="text-center" id="blue-player-2-name">name</h4>
+              <h4 class="player-name-blue" id="blue-player-2-name">name</h4>
               <!-- boost bar -->
               <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
                 <div class="progress-bar progress-done-b" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-2-p-bar">
@@ -155,9 +163,9 @@ Please follow me on YouTube and Twitch
             </div>
 
             <!-- blue player 1 -->
-            <div class="player-box border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-1">
+            <div class="player-box blue border border-dark text-dark bg-blue-team rounded mt-2 d-none" id="blue-player-1">
               <!-- players name -->
-              <h4 class="text-center" id="blue-player-1-name">name</h4>
+              <h4 class="player-name-blue" id="blue-player-1-name">name</h4>
               <!-- boost bar -->
               <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
                 <div class="progress-bar progress-done-b" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-1-p-bar">
@@ -281,7 +289,7 @@ Please follow me on YouTube and Twitch
 
 
             <!-- orange player 3 -->
-            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-3">
+            <div class="player-box orange border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-3">
               <!-- players name -->
               <h4 class="text-center" id="orange-player-3-name">name</h4>
               <!-- boost bar -->
@@ -308,7 +316,7 @@ Please follow me on YouTube and Twitch
             </div>
             
             <!-- orange player 2 -->
-            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-2">
+            <div class="player-box orange border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-2">
               <!-- players name -->
               <h4 class="text-center" id="orange-player-2-name">name</h4>
               <!-- boost bar -->
@@ -335,7 +343,7 @@ Please follow me on YouTube and Twitch
             </div>
 
             <!-- orange player 1 -->
-            <div class="player-box border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-1">
+            <div class="player-box orange border border-dark text-dark bg-orange-team rounded mt-2 d-none" id="orange-player-1">
               <!-- players name -->
               <h4 class="text-center" id="orange-player-1-name">name</h4>
               <!-- boost bar -->
