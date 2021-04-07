@@ -286,6 +286,7 @@
               $('#blue-player-2-saves').text(blue2.saves)
               $('#blue-player-2-assists').text(blue2.assists)
               $('#blue-player-2-boost').text(blue2.boost)
+              $('#blue-player-2-boost-amount').text(blue2.boost)
               $('#blue-player-2-p-bar').width(blue2.boost + "%")
 
               //remove invis for p1 and do other shit
@@ -296,6 +297,7 @@
               $('#blue-player-1-saves').text(blue1.saves)
               $('#blue-player-1-assists').text(blue1.assists)
               $('#blue-player-1-boost').text(blue1.boost)
+              $('#blue-player-1-boost-amount').text(blue1.boost)
               $('#blue-player-1-p-bar').width(blue1.boost + "%")
 
 

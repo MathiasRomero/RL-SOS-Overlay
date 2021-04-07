@@ -6,19 +6,19 @@ body{
 
 .player-box{
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-  round-clip: 20px;
-  width: 300px;
-  height: 100px;
+  width: 350px;
+  height: 50px;
   background-color: black !important;
   color: #FFFFFF !important;
+  display: block;
 }
 
 .player-box.blue {
-  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
 }
 
 .player-box.orange {
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
 
 .active-box{
@@ -30,14 +30,18 @@ body{
 .player-name-orange{
   align-items: start;
   margin-left: 50px;
-  z-index: 3;
+  position: relative;
   overflow: auto;
+  font-size: 20px;
 }
 
 .player-name-blue{
   align-items: start;
+  position: relative;
   margin-left: 20%;
   overflow: auto;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 .timer-box{
@@ -49,7 +53,10 @@ body{
 .progress{
 	background: #000000;
     position: relative;
+    width: auto;
+   height: auto;
 }
+
 .progress-done-r{
 	background: #FF0000;
     clip-path: polygon(9% 0%, 100% 0%, 91% 100%, 0% 100%);
@@ -65,10 +72,11 @@ body{
     clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
 }
 
-.blue-score{
-
+.progress-bar-custom {
+  height: 30px;
+  width: auto;
 }
-	
+
 .map-box{
   width: 380px;
   height: 300px;
@@ -86,19 +94,23 @@ body{
 }
 
 .boost-container{
-  background-color: #FFFFFF;
+
+  width: 35%;
   height: 100%;
-  width: 50%;
-  position: relative;
-  z-index: 1;
-  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 50% 100%);
-  visibility: hidden;
+  float: left;
+  text-align: center;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 100%,0% 100%);
+  background-color: #2861ff;
+  justify-content: center;
 }
 
 .boost-amount {
-  color: #ff0000;
-  font-size: 30px;
-  visibility: hidden;
+  color: #ffffff;
+  font-size: 25px;
+  vertical-align: center;
+  line-height: 50px;
+
+
 }
 
 
