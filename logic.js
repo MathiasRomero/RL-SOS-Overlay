@@ -4,9 +4,8 @@
     Please follow me on YouTube and Twitch
 
     */
-
-    const ws = new WebSocket('ws://localhost:49122');
-
+    const ws = new WebSocket('ws://10.2.1.135:49122');
+    // const ws = new WebSocket('ws://localhost:49122');
 
     function orangeResetAll() {
 
@@ -20,7 +19,7 @@
       //$("div[id^='blue-player-']").text('')
       $('#blue-team-name').text('')
       $("#blue-player-1, #blue-player-2, #blue-player-1").addClass('d-none')
-      
+
       $('#blue-player-1-p-bar, #blue-player-2-p-bar, #blue-player-3-p-bar').width('0%')
     }
 
@@ -36,8 +35,8 @@
     }
 
     var dataSet = [
-              [0, 0],
-            ];
+      [0, 0],
+    ];
 
 
     var w = 380,
@@ -90,7 +89,7 @@
     }
 
     ws.onerror = (error) => {
-      console.log(`WebSocket error: ${error}`)
+      // console.log(`WebSocket error: ${error}`)
     }
 
     ws.onmessage = (e) => {
@@ -98,18 +97,20 @@
       var jEvent = JSON.parse(event.data);
 
 
-      //console.log(jEvent.data)
+      // console.log(jEvent.data);
 
 
       if (jEvent.event == "game:update_state") {
+        //Log all game data to console
+        console.log(jEvent.data.game);
 
         //gonna be used in a few spots
         var teamData = jEvent.data.game.teams
 
-        //console.log(jEvent.data.game.hasWinner)
+        // console.log(jEvent.data.game.hasWinner)
         if (jEvent.data.game.hasWinner == true) { // || jEvent.data.game.isReplay == true will be added on prod
           $('#main-ui').addClass('invisible');
-          //console.log(jEvent.data.game.isReplay)
+          // console.log(jEvent.data.game.isReplay)
 
         } else {
 
@@ -117,8 +118,11 @@
           $('#main-ui').removeClass('invisible');
 
           //time
-          var gameTime = jEvent.data.game.time
-          var round = Math.round(gameTime)
+          // console.log(jEvent.data.game.time);
+          // var gameTime = jEvent.data.game.time;
+          // var gameTime = jEvent.data.game.time_milliseconds;
+          var gameTime = jEvent.data.game.time_seconds;
+          var round = Math.round(gameTime);
 
           function myTime(time) {
 
@@ -210,11 +214,11 @@
               $('#blue-active-demos').text(activePlayerData.demos)
               $('#blue-active-shots').text(activePlayerData.shots)
               $('#blue-active-saves').text(activePlayerData.saves)
-              $('#blue-active-assists').text(activePlayerData.assists)
+              // $('#blue-active-assists').text(activePlayerData.assists)
               $('#blue-active-touches').text(activePlayerData.touches)
-              $('#blue-active-score').text(activePlayerData.score)
+              // $('#blue-active-score').text(activePlayerData.score)
               $('#blue-active-boost').text(activePlayerData.boost)
-              $('#blue-active-p-bar').height(activePlayerData.boost + "%")
+              $('#blue-active-p-bar').height((activePlayerData.boost) + "%")
 
 
             } else if (activePlayerData.team == 1) {
@@ -227,9 +231,9 @@
               $('#orange-active-demos').text(activePlayerData.demos)
               $('#orange-active-shots').text(activePlayerData.shots)
               $('#orange-active-saves').text(activePlayerData.saves)
-              $('#orange-active-assists').text(activePlayerData.assists)
+              // $('#orange-active-assists').text(activePlayerData.assists)
               $('#orange-active-touches').text(activePlayerData.touches)
-              $('#orange-active-score').text(activePlayerData.score)
+              // $('#orange-active-score').text(activePlayerData.score)
               $('#orange-active-boost').text(activePlayerData.boost)
               $('#orange-active-p-bar').height(activePlayerData.boost + "%")
 
@@ -266,24 +270,24 @@
             var blue3 = _.get(team0, [2])
 
             if (blue1 != undefined && blue2 != undefined && blue3 != undefined) {
-              
+
               $("div[id^='blue-player-']").removeClass('d-none')
-              
+
               $('#blue-player-3').removeClass('d-none')
               $('#blue-player-3-name').text(blue3.name)
               $('#blue-player-3-goals').text(blue3.goals)
               $('#blue-player-3-shots').text(blue3.shots)
               $('#blue-player-3-saves').text(blue3.saves)
-              $('#blue-player-3-assists').text(blue3.assists)
+              // $('#blue-player-3-assists').text(blue3.assists)
               $('#blue-player-3-boost').text(blue3.boost)
               $('#blue-player-3-p-bar').width(blue3.boost + "%")
-              
+
               $('#blue-player-2').removeClass('d-none')
               $('#blue-player-2-name').text(blue2.name)
               $('#blue-player-2-goals').text(blue2.goals)
               $('#blue-player-2-shots').text(blue2.shots)
               $('#blue-player-2-saves').text(blue2.saves)
-              $('#blue-player-2-assists').text(blue2.assists)
+              // $('#blue-player-2-assists').text(blue2.assists)
               $('#blue-player-2-boost').text(blue2.boost)
               $('#blue-player-2-p-bar').width(blue2.boost + "%")
 
@@ -293,7 +297,7 @@
               $('#blue-player-1-goals').text(blue1.goals)
               $('#blue-player-1-shots').text(blue1.shots)
               $('#blue-player-1-saves').text(blue1.saves)
-              $('#blue-player-1-assists').text(blue1.assists)
+              // $('#blue-player-1-assists').text(blue1.assists)
               $('#blue-player-1-boost').text(blue1.boost)
               $('#blue-player-1-p-bar').width(blue1.boost + "%")
 
@@ -308,7 +312,7 @@
               $('#blue-player-1-goals').text(blue1.goals)
               $('#blue-player-1-shots').text(blue1.shots)
               $('#blue-player-1-saves').text(blue1.saves)
-              $('#blue-player-1-assists').text(blue1.assists)
+              // $('#blue-player-1-assists').text(blue1.assists)
               $('#blue-player-1-boost').text(blue1.boost)
               $('#blue-player-1-p-bar').width(blue1.boost + "%")
 
@@ -317,13 +321,13 @@
               $('#blue-player-2-goals').text(blue2.goals)
               $('#blue-player-2-shots').text(blue2.shots)
               $('#blue-player-2-saves').text(blue2.saves)
-              $('#blue-player-2-assists').text(blue2.assists)
+              // $('#blue-player-2-assists').text(blue2.assists)
               $('#blue-player-2-boost').text(blue2.boost)
               $('#blue-player-2-p-bar').width(blue2.boost + "%")
 
-             /* $('#blue-player-3').addClass('d-none');
-              $("div[id^='blue-player-3']").text('')
-              $('#blue-player-3-p-bar').width('0%')*/
+              /* $('#blue-player-3').addClass('d-none');
+               $("div[id^='blue-player-3']").text('')
+               $('#blue-player-3-p-bar').width('0%')*/
 
             } else if (blue1 != undefined && blue2 == undefined && blue3 == undefined) {
 
@@ -332,7 +336,7 @@
               $('#blue-player-1-goals').text(blue1.goals)
               $('#blue-player-1-shots').text(blue1.shots)
               $('#blue-player-1-saves').text(blue1.saves)
-              $('#blue-player-1-assists').text(blue1.assists)
+              // $('#blue-player-1-assists').text(blue1.assists)
               $('#blue-player-1-boost').text(blue1.boost)
               $('#blue-player-1-p-bar').width(blue1.boost + "%")
 
@@ -349,7 +353,7 @@
           } else {
             blueResetAll()
           }
-          
+
           //does orange team exist?
           if (team1 != undefined) {
             //it does
@@ -360,35 +364,35 @@
             var orange3 = _.get(team1, [2])
 
             if (orange1 != undefined && orange2 != undefined && orange3 != undefined) {
-              
+
               $("div[id^='orange-player-']").removeClass('d-none')
-              
+
               $('#orange-player-3').removeClass('d-none')
               $('#orange-player-3-name').text(orange3.name)
               $('#orange-player-3-goals').text(orange3.goals)
               $('#orange-player-3-shots').text(orange3.shots)
               $('#orange-player-3-saves').text(orange3.saves)
-              $('#orange-player-3-assists').text(orange3.assists)
+              // $('#orange-player-3-assists').text(orange3.assists)
               $('#orange-player-3-boost').text(orange3.boost)
               $('#orange-player-3-p-bar').width(orange3.boost + "%")
-              
-              
+
+
               $('#orange-player-2').removeClass('d-none')
               $('#orange-player-2-name').text(orange2.name)
               $('#orange-player-2-goals').text(orange2.goals)
               $('#orange-player-2-shots').text(orange2.shots)
               $('#orange-player-2-saves').text(orange2.saves)
-              $('#orange-player-2-assists').text(orange2.assists)
+              // $('#orange-player-2-assists').text(orange2.assists)
               $('#orange-player-2-boost').text(orange2.boost)
               $('#orange-player-2-p-bar').width(orange2.boost + "%")
-              
+
               //remove invis for p1 and do other shit
               $('#orange-player-1').removeClass('d-none')
               $('#orange-player-1-name').text(orange1.name)
               $('#orange-player-1-goals').text(orange1.goals)
               $('#orange-player-1-shots').text(orange1.shots)
               $('#orange-player-1-saves').text(orange1.saves)
-              $('#orange-player-1-assists').text(orange1.assists)
+              // $('#orange-player-1-assists').text(orange1.assists)
               $('#orange-player-1-boost').text(orange1.boost)
               $('#orange-player-1-p-bar').width(orange1.boost + "%")
 
@@ -403,7 +407,7 @@
               $('#orange-player-1-goals').text(orange1.goals)
               $('#orange-player-1-shots').text(orange1.shots)
               $('#orange-player-1-saves').text(orange1.saves)
-              $('#orange-player-1-assists').text(orange1.assists)
+              // $('#orange-player-1-assists').text(orange1.assists)
               $('#orange-player-1-boost').text(orange1.boost)
               $('#orange-player-1-p-bar').width(orange1.boost + "%")
 
@@ -412,7 +416,7 @@
               $('#orange-player-2-goals').text(orange2.goals)
               $('#orange-player-2-shots').text(orange2.shots)
               $('#orange-player-2-saves').text(orange2.saves)
-              $('#orange-player-2-assists').text(orange2.assists)
+              // $('#orange-player-2-assists').text(orange2.assists)
               $('#orange-player-2-boost').text(orange2.boost)
               $('#orange-player-2-p-bar').width(orange2.boost + "%")
 
@@ -427,24 +431,24 @@
               $('#orange-player-1-goals').text(orange1.goals)
               $('#orange-player-1-shots').text(orange1.shots)
               $('#orange-player-1-saves').text(orange1.saves)
-              $('#orange-player-1-assists').text(orange1.assists)
+              // $('#orange-player-1-assists').text(orange1.assists)
               $('#orange-player-1-boost').text(orange1.boost)
               $('#orange-player-1-p-bar').width(orange1.boost + "%")
 
-             /* $('#orange-player-2').addClass('d-none');
-              $("div[id^='orange-player-2']").text('')
-              $('#orange-player-2-p-bar').width('0%')
+              /* $('#orange-player-2').addClass('d-none');
+               $("div[id^='orange-player-2']").text('')
+               $('#orange-player-2-p-bar').width('0%')
 
-              $('#orange-player-3').addClass('d-none');
-              $("div[id^='orange-player-3']").text('')
-              $('#orange-player-3-p-bar').width('0%')*/
+               $('#orange-player-3').addClass('d-none');
+               $("div[id^='orange-player-3']").text('')
+               $('#orange-player-3-p-bar').width('0%')*/
 
             }
 
           } else {
             orangeResetAll()
           }
-          
+
         }
 
       }
