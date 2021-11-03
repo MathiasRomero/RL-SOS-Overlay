@@ -23,6 +23,17 @@ body {
   background: #000000;
 }
 
+.progress-bottom {
+  /* -webkit-transform-origin: 0 100%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform-origin: 0 100%;
+  -moz-transform: rotate(90deg);
+  -ms-transform-origin: 0 100%;
+  -ms-transform: rotate(90deg);
+  transform-origin: 0 100%;
+  transform: rotate(90deg); */
+}
+
 .progress-done-r {
   background: linear-gradient(to left, #FFFFFF, #FF0000);
 }
@@ -34,17 +45,17 @@ body {
 .progress-done-active-b {
   /* background: #FF0000; */
   background: linear-gradient(to bottom, #FFFFFF, #FF0000);
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
 }
 
 .progress-done-active-r {
   /* background: #FF0000; */
   background: linear-gradient(to bottom, #FFFFFF, #FF0000);
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
 }
 
 .flip {
-  transform: rotate(180deg);
+  /* transform: rotate(180deg); */
 }
 
 .blue-score {}
