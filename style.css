@@ -1,60 +1,81 @@
-body{
+body {
   width: 1920px;
   height: 1080px;
 }
 
-.player-box{
+.player-box {
   width: 300px;
   height: 100px;
 }
 
-.active-box{
+.active-box {
   width: 280px;
   height: 200px;
 }
 
-.timer-box{
+.timer-box {
   background-color: #FF0000;
   width: 330px;
   height: 200px;
 }
 
-.progress{
-	
-	background: #000000;
-}
-.progress-done-r{
-	background: linear-gradient(to left,#FFFFFF,#FF0000);
+.progress {
+  background: #000000;
 }
 
-.progress-done-b{
-	background: linear-gradient(to right,#FFFFFF,#FF0000);
+.progress-bottom {
+  /* -webkit-transform-origin: 0 100%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform-origin: 0 100%;
+  -moz-transform: rotate(90deg);
+  -ms-transform-origin: 0 100%;
+  -ms-transform: rotate(90deg);
+  transform-origin: 0 100%;
+  transform: rotate(90deg); */
 }
 
-.progress-done-active{
-	background: #FF0000;
+.progress-done-r {
+  background: linear-gradient(to left, #FFFFFF, #FF0000);
 }
 
-.blue-score{
-
+.progress-done-b {
+  background: linear-gradient(to right, #FFFFFF, #FF0000);
 }
-	
-.map-box{
+
+.progress-done-active-b {
+  /* background: #FF0000; */
+  background: linear-gradient(to bottom, #FFFFFF, #FF0000);
+  /* transform: rotate(180deg); */
+}
+
+.progress-done-active-r {
+  /* background: #FF0000; */
+  background: linear-gradient(to bottom, #FFFFFF, #FF0000);
+  /* transform: rotate(180deg); */
+}
+
+.flip {
+  /* transform: rotate(180deg); */
+}
+
+.blue-score {}
+
+.map-box {
   width: 380px;
   height: 300px;
   position: relative;
 }
 
-.player{
+.player {
   position: absolute;
   width: 10px;
   height: 10px;
 }
 
-.bg-blue-team{
-  background-color: #FFFFFF; 
+.bg-blue-team {
+  background-color: #FFFFFF;
 }
 
-.bg-orange-team{
-  background-color: #FFFFFF; 
+.bg-orange-team {
+  background-color: #FFFFFF;
 }
